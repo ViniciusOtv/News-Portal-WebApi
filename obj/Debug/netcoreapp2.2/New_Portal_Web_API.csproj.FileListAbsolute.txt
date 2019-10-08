@@ -1,0 +1,14 @@
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\bin\Debug\netcoreapp2.2\New_Portal_Web_API.deps.json
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\bin\Debug\netcoreapp2.2\New_Portal_Web_API.runtimeconfig.json
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\bin\Debug\netcoreapp2.2\New_Portal_Web_API.runtimeconfig.dev.json
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\bin\Debug\netcoreapp2.2\New_Portal_Web_API.dll
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\bin\Debug\netcoreapp2.2\New_Portal_Web_API.pdb
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.csprojAssemblyReference.cache
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.csproj.CoreCompileInputs.cache
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.RazorAssemblyInfo.cache
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.RazorAssemblyInfo.cs
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.AssemblyInfoInputs.cache
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.AssemblyInfo.cs
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.RazorTargetAssemblyInfo.cache
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.dll
+C:\Users\vinicius.silva\source\repos\New_Portal_Web_API\obj\Debug\netcoreapp2.2\New_Portal_Web_API.pdb
