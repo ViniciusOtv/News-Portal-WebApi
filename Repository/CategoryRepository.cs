@@ -7,28 +7,32 @@ using Microsoft.Extensions.Configuration;
 using New_Portal_Web_API.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using MySql.Data.MySqlClient;
+using Microsoft.AspNetCore.Mvc;
 
-namespace New_Portal_Web_API.Repository
+
+namespace New_Portal_Web_API
 {
-    public class NoticiaRepository : INewsRepository
+
+    public class CategoryRepository
     {
         private IConfiguration _config;
-        private List<News> _news;
-        public NoticiaRepository(IConfiguration configuration)
+
+        private List<Category> _category;
+        
+        public CategoryRepository(IConfiguration configuration)
         {
             _config = configuration;
         }
-
-        public IEnumerable<News> GetAllNews()
+        public IEnumerable<Category> GetAllCategories()
         {
             using (var connection = new MySqlConnection(
                 _config.GetConnectionString("JornalDb")))
                 try
                 {
-                    var query = connection.Query<News>(
-                    "Select * from Noticias order by 1 desc limit 100;");
-                    _news = query.ToList();
-                    return _news;
+                    var query = connection.Query<Category>(
+                   "Select * from Categorias");
+                    _category = query.ToList();
+                    return _category;
                 }
                 catch (System.Exception)
                 {
