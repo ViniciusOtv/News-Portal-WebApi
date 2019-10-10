@@ -45,12 +45,12 @@ namespace New_Portal_Web_API.Controllers
             return Ok(_news);
         }
 
-        [HttpGet, Route("{CategoryId}")]
+        [HttpGet("/CategoryId/{id}")]
         public IActionResult GetNewsByCategory(int id)
         {
              _news = _newsRepository.GetNewsByCategory(id).ToList();
 
-            if (_news == null)
+            if (_news.Any())
             {
                 return NotFound();
             }
