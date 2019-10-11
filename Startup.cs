@@ -21,15 +21,17 @@ namespace New_Portal_Web_API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
-        public Startup(INewsRepository newsRepository)
+        public Startup(INewsRepository newsRepository, ICategoryRepository categoryRepository)
         {
             NewsRepository = newsRepository;
+            CategoryRepository = categoryRepository;
         }
 
         public INewsRepository NewsRepository { get; }
+
+        public ICategoryRepository CategoryRepository { get; }
 
         public IConfiguration Configuration { get; }
 

@@ -10,15 +10,13 @@ using MySql.Data.MySqlClient;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace New_Portal_Web_API
+namespace New_Portal_Web_API.Repository
 {
-
-    public class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private IConfiguration _config;
-
         private List<Category> _category;
-        
+
         public CategoryRepository(IConfiguration configuration)
         {
             _config = configuration;
@@ -31,6 +29,24 @@ namespace New_Portal_Web_API
                 {
                     var query = connection.Query<Category>(
                    "Select * from Categorias");
+                    _category = query.ToList();
+                    return _category;
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+        }
+
+        public IEnumerable<Category> GetCategoryById(int id)
+        {
+            using (var connection = new MySqlConnection(
+                _config.GetConnectionString("JornalDb")))
+                try
+                {
+                    var query = connection.Query<Category>(
+                   "Select * from Categorias WHERE ID = @id",
+                   new { @Id = id });
                     _category = query.ToList();
                     return _category;
                 }

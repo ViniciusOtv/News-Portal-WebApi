@@ -62,7 +62,7 @@ namespace New_Portal_Web_API.Repository
                 try
                 {
                     var query = connection.Query<News>(
-                        "Select * from Noticias Where CategoriaId = @CategoriaId",
+                        "Select * from Noticias Where CategoriaId = @CategoriaId Order By DataPublicacao Desc",
                         new { @CategoriaId = id });
 
                     _news = query.ToList();
