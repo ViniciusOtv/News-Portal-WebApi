@@ -4,12 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using New_Portal_Web_API.Repository;
 using New_Portal_Web_API.DAL;
@@ -45,6 +42,8 @@ namespace New_Portal_Web_API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
     
             services.AddSingleton<INewsRepository, NewsRepository>();
+
+            services.AddSingleton<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,7 +12,7 @@ namespace New_Portal_Web_API.Controllers
     public class CategoryController : Controller
     {
         private List<Category> _category;
-        public ICategoryRepository _categoryRepository;
+        private ICategoryRepository _categoryRepository;
 
         public CategoryController(ICategoryRepository categoryRepository)
         {
@@ -20,7 +20,6 @@ namespace New_Portal_Web_API.Controllers
         }
 
         [HttpGet]
-
         public IActionResult GetCategories()
         {
             _category = _categoryRepository.GetAllCategories().ToList();
@@ -31,6 +30,20 @@ namespace New_Portal_Web_API.Controllers
             }
 
             return Ok(_category);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetCategoryById(int id)
+        {
+            _category = _categoryRepository.GetCategoryById(id).ToList();
+
+            if (_category == null || !_category.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(_category);
+
         }
     }
 }
