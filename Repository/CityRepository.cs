@@ -35,6 +35,24 @@ namespace New_Portal_Web_API
                     throw;
                 }
         }
+
+        public IEnumerable<City> GetCityById(int cityId)
+        {
+             using (var connection = new MySqlConnection(
+                _config.GetConnectionString("JornalDb")))
+                try
+                {
+                    var query = connection.Query<City>(
+                   "Select * from Cidades WHERE id = @cityId", 
+                   new  { @cityId = cityId });
+                    _city = query.ToList();
+                    return _city;
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+        }
     }
 
 }

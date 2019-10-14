@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -20,15 +16,18 @@ namespace New_Portal_Web_API
             Configuration = configuration;
         }
 
-        public Startup(INewsRepository newsRepository, ICategoryRepository categoryRepository)
+        public Startup(INewsRepository newsRepository, ICategoryRepository categoryRepository, ICityRepository cityRepository)
         {
             NewsRepository = newsRepository;
             CategoryRepository = categoryRepository;
+            CityRepository = cityRepository;
         }
 
         public INewsRepository NewsRepository { get; }
 
         public ICategoryRepository CategoryRepository { get; }
+
+        public ICityRepository CityRepository { get; }
 
         public IConfiguration Configuration { get; }
 
@@ -44,6 +43,8 @@ namespace New_Portal_Web_API
             services.AddSingleton<INewsRepository, NewsRepository>();
 
             services.AddSingleton<ICategoryRepository, CategoryRepository>();
+
+            services.AddSingleton<ICityRepository, CityRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

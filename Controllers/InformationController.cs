@@ -48,9 +48,21 @@ namespace New_Portal_Web_API.Controllers
         [HttpGet("CategoryId/{id}")]
         public IActionResult GetNewsByCategory(int id)
         {
-             _news = _newsRepository.GetNewsByCategory(id).ToList();
+            _news = _newsRepository.GetNewsByCategory(id).ToList();
 
-            if (_news == null && !_news.Any())
+            if (_news == null || !_news.Any())
+            {
+                return NotFound();
+            }
+            return Ok(_news);
+        }
+
+        [HttpGet("CityId/{id}")]
+        public IActionResult GetNewsByCityId(int id)
+        {
+            _news = _newsRepository.GetNewsByCity(id).ToList();
+
+            if (_news == null || !_news.Any())
             {
                 return NotFound();
             }

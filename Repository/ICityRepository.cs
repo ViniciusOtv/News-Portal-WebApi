@@ -7,7 +7,7 @@ namespace New_Portal_Web_API.Repository
     {
         IEnumerable<City> GetAllCities();
 
-        // IEnumerable<Category> GetCategoryById(int id);
+        IEnumerable<City> GetCityById(int cityId);
     }
 
 }

@@ -54,7 +54,7 @@ namespace New_Portal_Web_API.Repository
                     throw;
                 }
         }
-        
+
         public IEnumerable<News> GetNewsByCategory(int id)
         {
             using (var connection = new MySqlConnection(
@@ -72,6 +72,26 @@ namespace New_Portal_Web_API.Repository
                 {
                     throw;
                 }
+        }
+
+        public IEnumerable<News> GetNewsByCity(int cityId)
+        {
+            using (var connection = new MySqlConnection(
+                _config.GetConnectionString("JornalDb")))
+                try
+                {
+                    var query = connection.Query<News>(
+                        "Select * from Noticias where CidadeId = @CidadeId Order By DataPublicacao Desc",
+                        new { @CidadeId = cityId });
+
+                        _news = query.ToList();
+                        return _news;
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+
         }
     }
 }
